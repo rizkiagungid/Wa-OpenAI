@@ -19,11 +19,12 @@
     "whatsapp-multi-device"
   ],
   "base": "https://github.com/DikaArdnt/Hisoka-Morou",
-  "author": "rasx",
+  "author": "rizkiagungid",
   "license": "MIT",
   "dependencies": {
     "@adiwajshing/baileys": "4.4.0",
     "@adiwajshing/keyed-db": "^0.2.4",
+    "@hapi/boom": "^10.0.0",
     "awesome-phonenumber": "^2.64.0",
     "chalk": "^4.1.2",
     "crypto": "^1.0.1",
@@ -41,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rizkiagungid/Wa-OpenAI.git"
+    "url": "git+https://github.com/rizkiagungid/Wa-OpenAI.git"
   },
   "bugs": {
     "url": "https://github.com/rizkiagungid/Wa-OpenAI/issues"

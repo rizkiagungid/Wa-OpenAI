@@ -1,58 +1,46 @@
 # Wa-OpenAI
 
-**_WhatsApp OpenAI Create with NodeJS Using Library [Baileys](https://github.com/adiwajshing/Baileys)_**
+***WhatsApp OpenAI Create with NodeJS Using Library [Baileys](https://github.com/adiwajshing/Baileys)***
 
 ## BACA DULU
-
-Terdapat 2 tipe yaitu menggunakan command dan tanpa menggunakan command (auto chat).
-
-- Jika ingin menggunakan command silakan ganti kata `true` menjadi `false` di file [key.json](https://github.com/rizkiagungid/Wa-OpenAI/blob/586dbf2e7bb182b3a649d560e50ef44911fb4db8/key.json#L3)<br>Untuk commandnya menggunakan `.ai`
-- Jika tidak ingin menggunakan command (auto chat) silakan ganti kata `false` menjadi `true` di file [key.json](https://github.com/rizkiagungid/Wa-OpenAI/blob/586dbf2e7bb182b3a649d560e50ef44911fb4db8/key.json#L3)
+Terdapat 2 fitur yaitu ```ChatGPT(text)``` dan ```DALL-E(Text To Image)``` tipe yaitu <br>Untuk commandnya menggunakan ```/ai``` dan ```/img```
 
 ## Get & Change OpenAI ApiKey
-
-- Jika limit ApiKey OpenAI sudah habis silakan buat apikey yang barunya [Disini](https://beta.openai.com/account/api-keys)
-- Ganti ApiKey OpenAI pada file [key.json](https://github.com/rizkiagungid/Wa-OpenAI/blob/586dbf2e7bb182b3a649d560e50ef44911fb4db8/key.json#L2)
+- Silakan buat apikeynya terlebih dahulu [Disini](https://beta.openai.com/account/api-keys)
+- Ganti ApiKey OpenAI pada file [key.json](https://github.com/Sansekai/Wa-OpenAI/blob/3bd55740764bcb30084277f6be82d15b6ee25b99/key.json#L2)
 
 ## Install
-
 **Install on RDP/Windows ✅**
 
 Install [NodeJS](https://nodejs.org/en/download/)
-dan [Git Bash](https://git-scm.com/downloads) terlebih dahulu
-
+ dan [Git Bash](https://git-scm.com/downloads) terlebih dahulu
 ```bash
-$ git clone https://github.com/rizkiagungid/Wa-OpenAI
+$ git clone https://github.com/Sansekai/Wa-OpenAI
 $ cd Wa-OpenAI
 $ npm install
 $ node index.js
 ```
-
 **Install on Termux ✅**
 
-Silakan install manual `node_modules` terlebih dahulu, karena di termux saat install otomatis melalui `npm install` terjadi error.
-<br>Link `node_modules`: [Klik Disini](https://drive.google.com/file/d/1gKGjseRirX6mQ5LOFULpmnDs7q3Svm8y/view?usp=sharing)
-
+Silakan install manual ```node_modules``` terlebih dahulu, karena di termux saat install otomatis melalui ```npm install``` terjadi error.
+<br>Link ```node_modules```: [Klik Disini](https://drive.google.com/file/d/1gKGjseRirX6mQ5LOFULpmnDs7q3Svm8y/view?usp=sharing)
 ```bash
 $ pkg install git nodejs -y
-$ git clone https://github.com/rizkiagungid/Wa-OpenAI
+$ git clone https://github.com/Sansekai/Wa-OpenAI
 $ cd Wa-OpenAI
 ```
-
-Sesudah menginstall file node_modules, silahkan extract file `node_modules.zip` dan taruh di folder Wa-OpenAI.
+Sesudah menginstall file node_modules, silahkan extract file ```node_modules.zip``` dan taruh di folder Wa-OpenAI.
 
 **Run**
-
 ```bash
 $ node index.js
 ```
 
 ## Donate
-
-<a href="https://saweria.co/rizkiagungid" target="_blank"><img src="https://user-images.githubusercontent.com/26188697/180601310-e82c63e4-412b-4c36-b7b5-7ba713c80380.png" alt="Donate For rizkiagungid" height="41" width="174"></a>
+<a href="https://saweria.co/Sansekai" target="_blank"><img src="https://user-images.githubusercontent.com/26188697/180601310-e82c63e4-412b-4c36-b7b5-7ba713c80380.png" alt="Donate For Yusril" height="41" width="174"></a>
 
 ## License
+[MIT License](https://github.com/Sansekai/Wa-OpenAI/blob/main/LICENSE)
 
-[MIT License](https://github.com/rizkiagungid/Wa-OpenAI/blob/main/LICENSE)
+Copyright (c) 2022 M Yusril
 
-Copyright (c) 2023 Rizkiagungid
