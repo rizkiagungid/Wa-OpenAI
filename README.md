@@ -1,4 +1,5 @@
 # Wa-OpenAI
+# FOLLOW GITHUB KU DAN KASIH STAR UNTUK MENGGUNAKAN NYA
 
 ***WhatsApp OpenAI Create with NodeJS Using Library [Baileys](https://github.com/adiwajshing/Baileys)***
 
