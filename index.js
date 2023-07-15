@@ -1,22 +1,18 @@
-const sessionName = "rizkiagungid";
+const sessionName = "rasx";
 const donet = "https://saweria.co/rizkiagungid";
-const owner = ["6281290053660"];
+const owner = ["6281290053660"]; // Put your number here ex: ["62xxxxxxxxx"]
 const {
-  default: sansekaiConnect,
-  useSingleFileAuthState,
+  default: rizkiagungidConnect,
+  useMultiFileAuthState,
   DisconnectReason,
   fetchLatestBaileysVersion,
-  generateForwardMessageContent,
-  prepareWAMessageMedia,
-  generateWAMessageFromContent,
-  generateMessageID,
-  downloadContentFromMessage,
   makeInMemoryStore,
   jidDecode,
   proto,
   getContentType,
+  Browsers, 
+  fetchLatestWaWebVersion
 } = require("@adiwajshing/baileys");
-const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`);
 const pino = require("pino");
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");
@@ -140,7 +136,8 @@ function smsg(conn, m, store) {
 }
 
 async function startHisoka() {
-  const { version, isLatest } = await fetchLatestBaileysVersion();
+  const { state, saveCreds } = await useMultiFileAuthState(`./${sessionName ? sessionName : "session"}`);
+  const { version, isLatest } = await fetchLatestWaWebVersion().catch(() => fetchLatestBaileysVersion());
   console.log(`using WA v${version.join(".")}, isLatest: ${isLatest}`);
   console.log(
     color(
@@ -154,10 +151,10 @@ async function startHisoka() {
     )
   );
 
-  const client = sansekaiConnect({
+  const client = rizkiagungidConnect({
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
-    browser: ["Wa-OpenAI - Sansekai", "Safari", "3.0"],
+    browser: Browsers.macOS('Desktop'),
     auth: state,
   });
 
@@ -173,7 +170,7 @@ async function startHisoka() {
       if (!client.public && !mek.key.fromMe && chatUpdate.type === "notify") return;
       if (mek.key.id.startsWith("BAE5") && mek.key.id.length === 16) return;
       m = smsg(client, mek, store);
-      require("./sansekai")(client, m, chatUpdate, store);
+      require("./rizkiagungid")(client, m, chatUpdate, store);
     } catch (err) {
       console.log(err);
     }
@@ -267,10 +264,10 @@ async function startHisoka() {
         console.log("Connection Lost from Server, reconnecting...");
         startHisoka();
       } else if (reason === DisconnectReason.connectionReplaced) {
-        console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
+        console.log("Connection Replaced, Another New Session Opened, Please Restart Bot");
         process.exit();
       } else if (reason === DisconnectReason.loggedOut) {
-        console.log(`Device Logged Out, Please Delete Session file rizkiagungid.json and Scan Again.`);
+        console.log(`Device Logged Out, Please Delete Folder Session yusril and Scan Again.`);
         process.exit();
       } else if (reason === DisconnectReason.restartRequired) {
         console.log("Restart Required, Restarting...");
@@ -291,7 +288,7 @@ async function startHisoka() {
     // console.log('Connected...', update)
   });
 
-  client.ev.on("creds.update", saveState);
+  client.ev.on("creds.update", saveCreds);
 
   const getBuffer = async (url, options) => {
     try {
